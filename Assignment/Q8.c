@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int arr[100], size, i;
+    int temp;
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+    printf("Enter the elements of the array: ");
+    for (i = 0; i < size; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+    int start = 0;
+    int end = size - 1;
+    printf("array before reverse: ");
+    for(i=0;i<size;i++)
+    {
+        printf("%d ",arr[i]);
+    }
+    while (start < end) {
+        temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+        start++;
+        end--;
+    }
+    printf("\narray after reverse: ");
+    for(i=0;i<size;i++)
+    {
+        printf("%d ",arr[i]);
+    }
+    return 0;
+}
