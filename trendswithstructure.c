@@ -4,28 +4,25 @@ struct Item
 {
     int ID;
     int MRP;
+    char Name[20];
     int stock;
     int offer;
 };
 int main()
 {
     struct Item item[10]={
-        {1011,99,4,9},
-        {1021,199,6,13},
-        {1031,299,9,4},
-        {1041,399,4,55},
-        {1051,499,5,50},
-        {1061,599,7,33},
-        {1071,699,8,44},
-        {1081,799,36,65},
-        {1091,899,33,56},
-        {1101,999,10,65}
+        {1011,99,"Tshirt",4,9},
+        {1021,199,"Suits",6,13},
+        {1031,299,"Pants",9,4},
+        {1041,399,"Shirt",4,55},
+        {1051,499,"Blazer",5,50},
+        {1061,599,"jogger",7,33},
+        {1071,699,"jeans",8,44},
+        {1081,799,"Kurtas",36,65},
+        {1091,899,"Trouser",33,56},
+        {1101,999,"Bottoms",10,65}
     };
-    int choice,purchase;
-    int quantity=0;
-    int total=0;
-    int found;
-    int k=0;
+    int choice,purchase,quantity=0,total=0,found,k=0;
     do
     {
         printf("\n--------- Trend Invoice ---------\n");
@@ -38,11 +35,12 @@ int main()
         {
             case 1:
 
-                printf("\nID\tOffer\tMRP\tStock\n");
+                printf("\nID\tName\tOffer\tMRP\tStock\n");
                 for(int i=0;i<10;i++)
                 {
-                    printf("%d\t%d\t%d\t%d\n",
+                    printf("%d\t%s\t%d\t%d\t%d\n",
                            item[i].ID,
+                           item[i].Name,
                            item[i].offer,
                            item[i].MRP,
                            item[i].stock);
